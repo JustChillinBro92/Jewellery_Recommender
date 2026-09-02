@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap");
+
+:root {
+  color: #fff;
+  background: #000;
+  font-family: Inter, sans-serif;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  background: none;
+}
+.site-header {
+  height: 80px;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(18px);
+}
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.nav-links button {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.nav-links .active,
+.nav-links button:hover {
+  color: #ffe088;
+}
+.brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+}
+.brand strong {
+  font:
+    24px "Playfair Display",
+    serif;
+  letter-spacing: 0.2em;
+}
+.brand span {
+  color: #888;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  margin-top: 3px;
+}
+.profile {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #000;
+  background: #ffe088;
+  font-size: 9px;
+}
+.dark-page {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: #000;
+}
+.hero {
+  padding: 110px 8vw 90px;
+  text-align: center;
+  background: radial-gradient(
+    circle at 70% 0,
+    rgba(255, 224, 136, 0.08),
+    transparent 35%
+  );
+}
+.eyebrow,
+.card-label {
+  color: #ddbd55;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+.hero h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(42px, 6vw, 72px);
+}
+.hero-copy {
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.57);
+  line-height: 1.7;
+  font-size: 16px;
+}
+.catalog {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 5vw 100px;
+}
+.catalog-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  padding: 0 0 20px;
+  margin-bottom: 55px;
+}
+.filters {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+}
+.filters button,
+.filter-label {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.filters .selected-filter {
+  color: #fff;
+}
+.necklace-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px 24px;
+}
+.necklace-card {
+  cursor: pointer;
+}
+.necklace-card.is-selected h2,
+.necklace-card:hover h2 {
+  color: #ffe088;
+}
+.image-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #1c1b1b;
+  aspect-ratio: 4 / 5;
+}
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.7) brightness(0.8);
+  transition: 0.7s ease;
+}
+.necklace-card:hover img,
+.necklace-card.is-selected img {
+  filter: saturate(1) brightness(1);
+  transform: scale(1.04);
+}
+.select-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 15px);
+  padding: 13px 20px;
+  background: #ffe088;
+  color: #000;
+  opacity: 0;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.necklace-card:hover .select-overlay,
+.necklace-card.is-selected .select-overlay {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.card-label {
+  margin: 22px 0 8px;
+  color: #a88a3f;
+  font-size: 10px;
+}
+.necklace-card h2 {
+  margin: 0;
+  font-size: 25px;
+  transition: color 0.25s;
+}
+.gold-button {
+  padding: 15px 22px;
+  color: #000;
+  background: #ffe088;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transition: 0.25s;
+}
+.gold-button:hover:not(:disabled) {
+  background: #fff;
+}
+.gold-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.continue-button {
+  display: block;
+  margin: 75px auto 0;
+}
+.stylist-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 5fr) 7fr;
+  gap: 9vw;
+  max-width: 1200px;
+  margin: auto;
+  padding: 90px 5vw 120px;
+}
+.back-button {
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+.back-button:hover {
+  color: #ffe088;
+}
+.foundation-image {
+  max-width: 460px;
+  margin: 20px 0;
+}
+.foundation-column h1 {
+  font-size: 34px;
+  margin: 15px 0;
+}
+.description {
+  max-width: 430px;
+  color: #888;
+  line-height: 1.7;
+}
+.recommendation-column {
+  padding-top: 140px;
+}
+.recommendation-column > h2 {
+  font-size: 48px;
+  margin: 10px 0;
+}
+.recommendation-column > .hero-copy {
+  margin: 0 0 28px;
+}
+.earring-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 55px;
+}
+.earring-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: saturate(0.78);
+}
+.earring-card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+.error-message {
+  max-width: 500px;
+  color: #ef9d9d;
+  font-size: 13px;
+  line-height: 1.5;
+}
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+  }
+  .necklace-grid,
+  .stylist-layout {
+    grid-template-columns: 1fr;
+  }
+  .stylist-layout {
+    padding-top: 45px;
+  }
+  .recommendation-column {
+    padding-top: 20px;
+  }
+  .catalog-toolbar {
+    margin-bottom: 35px;
+  }
+}

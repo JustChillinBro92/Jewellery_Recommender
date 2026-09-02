@@ -1,0 +1,29 @@
+frontend/node_modules/
+frontend/dist/
+frontend/stitch/
+**/__pycache__/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+*.secrets
+*.pem
+*.key
+*.crt
+credentials.json
+secrets.json
+.vscode/mcp.json
+
+# Python and tooling caches
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
