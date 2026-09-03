@@ -17,8 +17,7 @@ app.py             # backwards-compatible launcher
 
 This prototype ranks the provided inventory earrings for an uploaded necklace
 image. It uses a deterministic Pillow/NumPy descriptor (HSV colour histograms,
-colour moments, spatial pooling, and edge texture), so no model download or
-training is needed.
+colour moments, spatial pooling, and edge texture).
 
 ## Run
 
@@ -38,6 +37,20 @@ python -m jewellery_matcher --csv "C:\path\candidate_dataset.csv" --images "C:\p
 `python backend\app.py` remains supported as a compatibility launcher.
 
 ## Frontend
+
+The frontend source is organized by responsibility:
+
+```text
+frontend/
+  public/inventory/       # browser-served product images
+  src/
+    components/           # reusable UI and screen components
+    data/                 # necklace catalog data
+    lib/                  # asset/path helpers
+    styles/               # global stylesheet
+    App.jsx               # screen-level state and routing
+    main.jsx              # Vite entry point
+```
 
 ```powershell
 cd frontend
